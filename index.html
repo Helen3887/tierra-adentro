@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tierra Adentro | Psicoturismo Terapéutico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --verde-bosque: #0D2118;
+            --ocre-tierra: #9C4221;
+            --crema: #FAF9F6;
+            --suave: #DDE5B6;
+        }
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--crema); 
+            color: var(--verde-bosque); 
+            scroll-behavior: smooth; 
+        }
+        h1, h2, h3, h4, .font-serif { font-family: 'Cormorant Garamond', serif; }
+        .bg-bosque { background-color: var(--verde-bosque); }
+        .text-ocre { color: var(--ocre-tierra); }
+        .glass { background: rgba(250, 249, 246, 0.92); backdrop-filter: blur(12px); }
+        
+        /* Ajuste para que el menú fijo no tape el inicio de las secciones al hacer clic */
+        section, header { scroll-margin-top: 80px; }
+        
+        .reveal { transition: all 0.8s ease-out; }
+        .hover-lift { transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .hover-lift:hover { transform: translateY(-8px); }
+        
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--crema); }
+        ::-webkit-scrollbar-thumb { background: var(--ocre-tierra); border-radius: 10px; }
+    </style>
+</head>
+<body class="antialiased selection:bg-ocre-tierra selection:text-white">
+
+    <nav class="fixed top-0 w-full z-50 bg-[#fdfcfb] border-b-[6px] border-[#1a2e1a] px-10 py-6 flex justify-between items-center shadow-2xl">
+        <div class="flex flex-col">
+            <a href="#inicio" class="text-3xl md:text-4xl font-black tracking-tighter uppercase text-[#1a2e1a] leading-[0.8]">
+                TIERRA <span class="text-[#bc6c25]">ADENTRO</span>
+            </a>
+            <span class="text-[13px] tracking-[0.2em] uppercase text-[#1a2e1a] font-bold mt-2 opacity-90">
+                Ecoturismo Terapéutico
+            </span>
+        </div>
+
+        <ul class="hidden lg:flex gap-12 text-[14px] uppercase tracking-widest font-black items-center">
+    <li>
+        <a href="#inicio" class="text-[#1a2e1a] hover:text-[#bc6c25] transition-all border-b-4 border-transparent hover:border-[#bc6c25] pb-1">
+            Inicio
+        </a>
+    </li>
+    <li>
+        <a href="#alojamiento" class="text-[#1a2e1a] hover:text-[#bc6c25] transition-all border-b-4 border-transparent hover:border-[#bc6c25] pb-1">
+            Alojamiento
+        </a>
+    </li>
+    <li>
+        <a href="#propuesta" class="text-[#1a2e1a] hover:text-[#bc6c25] transition-all border-b-4 border-transparent hover:border-[#bc6c25] pb-1">
+            Esencia
+        </a>
+    </li>
+    <li>
+        <a href="#visitantes" class="text-[#1a2e1a] hover:text-[#bc6c25] transition-all border-b-4 border-transparent hover:border-[#bc6c25] pb-1">
+            Visitantes
+        </a>
+    </li>
+    <li>
+        <a href="#ruta" class="text-[#1a2e1a] hover:text-[#bc6c25] transition-all border-b-4 border-transparent hover:border-[#bc6c25] pb-1">
+            Psicología
+        </a>
+    </li>
+    <li>
+        <a href="#contacto" class="bg-[#bc6c25] text-white px-10 py-5 rounded-none transform -skew-x-12 hover:skew-x-0 hover:scale-110 transition-all duration-300 shadow-[6px_6px_0px_#1a2e1a] active:translate-y-1 active:shadow-none">
+            <span class="inline-block skew-x-12 group-hover:skew-x-0 font-black tracking-[0.2em] text-sm">RESERVAR AHORA</span>
+        </a>
+    </li>
+</ul>
+        <div class="lg:hidden flex flex-col gap-2 cursor-pointer">
+            <div class="w-10 h-1.5 bg-[#1a2e1a]"></div>
+            <div class="w-10 h-1.5 bg-[#1a2e1a]"></div>
+            <div class="w-10 h-1.5 bg-[#1a2e1a]"></div>
+        </div>
+    </nav>
+
+<a href="https://wa.me/573192909698?text=Hola,%20siento%20el%20llamado%20de%20Tierra%20Adentro.%20Me%20gustaría%20recibir%20información." 
+   target="_blank" 
+   class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-[0px_10px_20px_rgba(0,0,0,0.2)] hover:scale-110 transition-transform duration-300 flex items-center justify-center group"
+   title="Escríbenos por WhatsApp">
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.653a11.883 11.883 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="absolute right-16 bg-white text-[#1a2e1a] text-xs font-bold px-4 py-2 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap border border-gray-100">
+        ¿Hablamos?
+    </span>
+</a>
+
+    <header id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-black/60 z-10"></div>
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1920" 
+             class="absolute inset-0 w-full h-full object-cover scale-105 animate-[pulse_10s_infinite]" alt="Bosque brumoso">
+        
+        <div class="relative z-20 px-6 text-center text-white max-w-4xl">
+           <span class="text-[#E9C46A] uppercase tracking-[0.4em] text-sm mb-6 block font-black drop-shadow-md">
+                El arte de volver a casa
+            </span>
+            <h1 class="text-6xl md:text-8xl mb-8 italic font-light leading-tight text-white">
+                Donde el silencio <br> <span class="font-serif italic text-white/90">se vuelve medicina</span>
+            </h1>
+            <p class="text-lg md:text-xl font-medium tracking-wide mb-12 opacity-100 max-w-2xl mx-auto leading-relaxed">
+                Un refugio psico-ecológico diseñado para sanar el alma a través del diálogo profundo con la tierra.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a href="#propuesta" class="group relative px-12 py-5 bg-[#9C4221] text-white rounded-full font-bold overflow-hidden transition-all shadow-2xl">
+                    <span class="relative z-10 tracking-[0.2em]">EMPEZAR EL VIAJE</span>
+                    <div class="absolute inset-0 bg-[#7C3219] translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+            <div class="w-px h-16 bg-[#9C4221] mx-auto"></div>
+        </div>
+    </header>
+
+    <section id="propuesta" class="py-32 bg-white px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div class="max-w-xl">
+                    <h2 class="text-6xl italic text-bosque mb-6">Nuestra Esencia</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed font-medium">Combinamos la psicología clínica con la sabiduría ancestral del bosque para ofrecer un espacio de reconexión real.</p>
+                </div>
+                <div class="h-1 bg-ocre/20 flex-grow mx-8 mb-4 hidden md:block"></div>
+                <span class="text-ocre font-bold tracking-widest text-sm uppercase">Propuesta de valor</span>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-16">
+                <div class="group">
+                    <div class="w-16 h-16 bg-crema border border-gray-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-ocre group-hover:text-white transition-all duration-500 shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl italic text-bosque mb-4 font-bold">Eco-terapia</h3>
+                    <p class="text-gray-700 leading-relaxed font-medium">Programas diseñados para activar tu 'yo ecológico' y reducir los niveles de cortisol mediante el contacto directo y caminatas ecologicas.</p>
+                </div>
+
+                <div class="group">
+                    <div class="w-16 h-16 bg-crema border border-gray-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-ocre group-hover:text-white transition-all duration-500 shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl italic text-bosque mb-4 font-bold">Inmersión Ancestral</h3>
+                    <p class="text-gray-700 leading-relaxed font-medium">Talleres de agricultura consciente y cocina local para recuperar el sentido de pertenencia a la comunidad.</p>
+                </div>
+
+                <div class="group">
+                    <div class="w-16 h-16 bg-crema border border-gray-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-ocre group-hover:text-white transition-all duration-500 shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl italic text-bosque mb-4 font-bold">Desconexión Real</h3>
+                    <p class="text-gray-700 leading-relaxed font-medium">Espacios libres de tecnología. El lujo hoy es la presencia plena, el silencio y la belleza sin filtros digitales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="alojamiento" class="relative py-40 bg-[#0D2118] overflow-hidden">
+        <div class="absolute inset-0 bg-black/60 z-0"></div>
+        
+        <div class="absolute inset-0 opacity-30 z-0">
+            <img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <span class="text-[#E9C46A] text-6xl mb-8 block font-serif">“</span>
+            
+            <p class="text-white text-3xl md:text-5xl italic font-light leading-tight drop-shadow-lg">
+                La naturaleza no es un lugar para visitar. <br class="hidden md:block">
+                <span class="text-[#E9C46A] font-bold not-italic">Es nuestro hogar.</span> 
+                <span class="block mt-4 md:inline mt-0">Al volver a ella, volvemos a nosotros mismos.</span>
+            </p>
+            
+            <div class="w-24 h-px bg-[#E9C46A] mx-auto mt-12 shadow-sm"></div>
+        </div>
+    </section>
+
+    <section id="ruta" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center">
+            <div class="relative">
+                <div class="absolute -top-10 -left-10 w-64 h-64 bg-suave rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80" 
+                     class="relative rounded-[4rem] shadow-2xl z-10 w-full h-[600px] object-cover hover-lift">
+                <div class="absolute -bottom-6 -right-6 bg-ocre text-white p-12 rounded-[3rem] z-20 shadow-2xl hidden md:block">
+                    <p class="text-5xl font-serif italic font-bold">3-7 días</p>
+                    <p class="text-[10px] uppercase tracking-[0.3em] mt-2 font-bold">Duración sugerida</p>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-5xl italic text-bosque mb-12 leading-tight text-center lg:text-left">La Ruta del Alma</h2>
+                <div class="space-y-12">
+                    <div class="flex gap-8 group">
+                        <span class="text-5xl font-serif italic text-ocre/30 group-hover:text-ocre transition-colors font-bold">01</span>
+                        <div>
+                            <h4 class="text-2xl italic text-bosque mb-2 font-bold">El Encuentro</h4>
+                            <p class="text-gray-600 font-medium">Evaluación psicosocial previa para personalizar tu experiencia y soltar las cargas antes de entrar al bosque.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-8 group">
+                        <span class="text-5xl font-serif italic text-ocre/30 group-hover:text-ocre transition-colors font-bold">02</span>
+                        <div>
+                            <h4 class="text-2xl italic text-bosque mb-2 font-bold">La Inmersión</h4>
+                            <p class="text-gray-600 font-medium">Silencio, baños de bosque y alojamiento en domos geodésicos integrados en la naturaleza virgen.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-8 group">
+                        <span class="text-5xl font-serif italic text-ocre/30 group-hover:text-ocre transition-colors font-bold">03</span>
+                        <div>
+                            <h4 class="text-2xl italic text-bosque mb-2 font-bold">El Renacer</h4>
+                            <p class="text-gray-600 font-medium">Integración de la experiencia con herramientas prácticas para mantener la paz mental en la vida urbana.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="proposito" class="py-32 bg-[#0D2118] text-white px-6">
+    <div class="max-w-4xl mx-auto text-center">
+        <span class="text-[#DDE5B6] font-bold uppercase tracking-[0.4em] text-xs">El Origen</span>
+        <h2 class="text-5xl md:text-7xl italic mt-6 mb-12 font-serif">¿Por qué Tierra Adentro?</h2>
+        
+        <div class="space-y-8 text-lg md:text-xl leading-relaxed text-white/80 font-light">
+            <p>
+                Tierra Adentro nace de una observación profunda: <span class="text-[#DDE5B6] font-medium">hemos perdido el rastro de nosotros mismos en el ruido de la ciudad.</span> Como profesionales de la salud mental, entendimos que el consultorio tradicional a veces se queda pequeño para las cargas que llevamos hoy.
+            </p>
+            
+            <p>
+                Este proyecto significa <span class="italic font-serif text-2xl text-white block my-6">"volver a la raíz para sanar la copa".</span> 
+            </p>
+            
+            <p>
+                No es solo turismo; es un puente diseñado para que la naturaleza haga su trabajo como psicóloga primaria. Creamos este refugio porque creemos que el silencio no es la ausencia de sonido, sino el lugar donde por fin logras escucharte a ti mismo. Tierra Adentro es, en esencia, <span class="border-b border-[#9C4221]">el permiso que te das para volver a casa.</span>
+            </p>
+        </div>
+
+        <div class="mt-16 flex justify-center">
+            <div class="w-px h-24 bg-gradient-to-b from-[#9C4221] to-transparent"></div>
+        </div>
+    </div>
+</section>
+
+<section id="mi-vision" class="py-32 bg-[#0D2118] text-white px-6">
+    <div class="max-w-4xl mx-auto text-center">
+        <span class="text-[#DDE5B6] font-bold uppercase tracking-[0.4em] text-xs">Mi Visión</span>
+        <h2 class="text-5xl md:text-7xl italic mt-6 mb-12 font-serif">El porqué de este refugio</h2>
+        
+        <div class="space-y-8 text-lg md:text-xl leading-relaxed text-white/80 font-light text-balance">
+            <p>
+                Creé <span class="text-[#DDE5B6] font-medium italic">Tierra Adentro</span> desde una convicción simple pero profunda: el ser humano no puede sanar del todo si está desconectado de la tierra que lo sostiene. 
+            </p>
+            
+            <p>
+                Este proyecto significa para mí el fin de la búsqueda externa. Muchas veces buscamos respuestas en el ruido, en la productividad o en los demás, cuando la verdadera claridad solo emerge cuando logramos bajar el volumen del mundo.
+            </p>
+            
+            <p class="italic font-serif text-2xl md:text-3xl text-white py-4">
+                "Diseñé este espacio no como un destino turístico, sino como un retorno hacia uno mismo."
+            </p>
+            
+            <p>
+                Para mí, la naturaleza no es el escenario de la terapia; es la terapeuta misma. Tierra Adentro es mi forma de compartir contigo el permiso de soltar, de respirar y de recordar que, debajo de todas tus capas y responsabilidades, hay un ser que merece paz.
+            </p>
+        </div>
+
+        <div class="mt-24 text-center">
+            <div class="w-32 h-px bg-[#9C4221] mx-auto mb-10"></div>
+            
+            <p class="font-serif italic text-6xl md:text-7xl tracking-tighter text-white/95">
+                LNA
+            </p>
+            
+            <p class="text-xs uppercase tracking-[0.5em] text-[#DDE5B6] mt-6 opacity-70">
+                ELENA HENAO FRANCO
+            </p>
+        </div>
+</section>
+
+<section id="visitantes" class="py-32 bg-[#FDFCFB] px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20">
+                <span class="text-[#9C4221] font-bold uppercase tracking-[0.3em] text-xs">Identidad y Refugio</span>
+                <h2 class="text-5xl md:text-6xl italic text-[#0D2118] mt-4">Para quién es este silencio</h2>
+            </div>
+
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-10 border-t-8 border-[#9C4221] shadow-xl hover-lift">
+                    <div class="text-[#DDE5B6] mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-serif italic mb-4 text-[#0D2118] font-bold">Mentes Saturadas</h3>
+                    <p class="text-gray-600 leading-relaxed font-medium">Para quienes han olvidado lo que es el silencio real. Aquí, el único pulso que importa es el del bosque; un refugio diseñado para silenciar el agotamiento mental, resetear tu sistema nervioso y permitirte, por fin, volver a respirar con calma.</p>
+                </div>
+
+                <div class="bg-white p-10 border-t-8 border-[#0D2118] shadow-xl hover-lift">
+                    <div class="text-[#DDE5B6] mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-serif italic mb-4 text-[#0D2118] font-bold">Vínculos en Pausa</h3>
+                    <p class="text-gray-600 leading-relaxed font-medium">Familia o Para relaciones que se han vuelto rutina o comunicación que solo ocurre a través de lo urgente. La naturaleza actúa como una mediadora silenciosa, creando el espacio seguro necesario para soltar las defensas, escucharse desde el corazón y redescubrir el hilo que los une, lejos del ruido cotidiano.</p>
+                </div>
+
+                <div class="bg-white p-10 border-t-8 border-[#9C4221] shadow-xl hover-lift">
+                    <div class="text-[#DDE5B6] mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-serif italic mb-4 text-[#0D2118] font-bold">Buscadores</h3>
+                    <p class="text-gray-600 leading-relaxed font-medium">Para quienes transitan umbrales: duelos, cambios de vida o crisis de identidad. Aquí el bosque ofrece su refugio para que no tengas que sostener nada; un entorno sagrado para honrar tu proceso, escuchar tu intuición y encontrar en la quietud de la tierra las respuestas que el caos de la ciudad suele ocultar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contacto" class="py-32 bg-white px-6">
+        <div class="max-w-4xl mx-auto bg-crema rounded-[4rem] p-12 md:p-20 shadow-2xl border border-gray-100">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl italic text-bosque mb-4">¿Sientes el llamado?</h2>
+                <p class="text-gray-600 font-bold uppercase tracking-widest text-xs">Déjanos tus datos para coordinar una entrevista previa.</p>
+            </div>
+            
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-2">
+                    <label class="text-[10px] uppercase tracking-widest font-extrabold text-bosque ml-4">Nombre Completo</label>
+                    <input type="text" placeholder="Tu nombre" class="w-full bg-white border-2 border-gray-100 rounded-full px-8 py-4 focus:ring-2 focus:ring-ocre focus:border-transparent outline-none transition-all shadow-sm">
+                </div>
+                <div class="space-y-2">
+                    <label class="text-[10px] uppercase tracking-widest font-extrabold text-bosque ml-4">Email</label>
+                    <input type="email" placeholder="hola@tuemail.com" class="w-full bg-white border-2 border-gray-100 rounded-full px-8 py-4 focus:ring-2 focus:ring-ocre focus:border-transparent outline-none transition-all shadow-sm">
+                </div>
+                <div class="md:col-span-2 space-y-2">
+                    <label class="text-[10px] uppercase tracking-widest font-extrabold text-bosque ml-4">¿Qué buscas sanar hoy?</label>
+                    <textarea rows="4" placeholder="Cuéntanos brevemente sobre tu momento vital..." class="w-full bg-white border-2 border-gray-100 rounded-[2rem] px-8 py-4 focus:ring-2 focus:ring-ocre focus:border-transparent outline-none transition-all shadow-sm"></textarea>
+                </div>
+                <div class="md:col-span-2 text-center mt-6">
+                    <button class="bg-bosque text-white px-16 py-5 rounded-full hover:bg-ocre hover:scale-105 transition-all duration-300 shadow-xl tracking-[0.3em] text-sm font-bold uppercase">
+                        Solicitar Información
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-bosque text-crema py-20 px-6 text-center border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-2xl font-light tracking-[0.3em] uppercase mb-8 text-white">Tierra Adentro</div>
+            <div class="flex justify-center gap-12 text-[11px] uppercase tracking-widest mb-12 font-bold">
+                <a href="#" class="hover:text-ocre transition text-white">Instagram</a>
+                <a href="#" class="hover:text-ocre transition text-white">Spotify (Sonidos)</a>
+                <a href="#" class="hover:text-ocre transition text-white">Privacidad</a>
+            </div>
+            <p class="text-sm md:text-base uppercase tracking-[0.3em] text-white/60 font-medium">
+    © 2026 Tierra Adentro | Creado con intención para tu bienestar
+</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+/* RESET Y GENERAL */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; } /* Hace que los hipervínculos se deslicen suavemente */
+body { font-family: 'Raleway', sans-serif; color: #333; line-height: 1.6; }
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(255, 255, 255, 0.95);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.logo { font-family: 'Playfair Display', serif; font-weight: bold; font-size: 1.2rem; color: #2d4a2d; }
+.logo span { display: block; font-size: 0.7rem; letter-spacing: 2px; color: #d4a373; }
+.nav-links { display: flex; list-style: none; gap: 25px; align-items: center; }
+.nav-links a { text-decoration: none; color: #444; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+.nav-links a:hover { color: #d4a373; }
+.btn-reservar { background: #2d4a2d; color: white !important; padding: 10px 20px; border-radius: 4px; }
+
+/* HERO (Basado en tu imagen) */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/montana-fondo.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+.hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 10px; }
+.hero-btns { margin-top: 30px; display: flex; gap: 15px; justify-content: center; }
+.btn-outline { border: 2px solid white; color: white; padding: 12px 25px; text-decoration: none; border-radius: 30px; transition: 0.3s; }
+.btn-outline:hover { background: white; color: #2d4a2d; }
+
+/* SECCIONES */
+.section { padding: 100px 10%; text-align: center; }
+.dark { background: #1a2a1a; color: #f4f1ea; }
+h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; color: #2d4a2d; }
+.dark h2 { color: #d4a373; }
+
+.grid, .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-top: 50px; }
+.card { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 4px solid #d4a373; }
+
+/* RUTAS */
+.ruta-pasos { display: flex; flex-direction: column; gap: 20px; align-items: center; margin-top: 40px; }
+.paso { display: flex; align-items: center; gap: 15px; font-size: 1.1rem; }
+.paso span { background: #d4a373; color: white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: bold; }
